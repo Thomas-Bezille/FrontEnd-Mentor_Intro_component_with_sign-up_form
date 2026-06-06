@@ -1,0 +1,230 @@
+@use 'variables' as *;
+
+// ─── Reset ────────────────────────────────────────────────────────────────────
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// ─── Base ─────────────────────────────────────────────────────────────────────
+
+body {
+  font-family: $font-family;
+  font-size: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5.5rem 1.5rem 3rem;
+  background-color: $color-red;
+  background-image: url('/images/bg-intro-mobile.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-width: $bp-desktop) {
+    background-image: url('/images/bg-intro-desktop.png');
+    padding: 2rem 5rem;
+  }
+}
+
+// ─── Layout ───────────────────────────────────────────────────────────────────
+
+.container {
+  width: 100%;
+  max-width: 1110px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+
+  @media (min-width: $bp-desktop) {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 3rem;
+  }
+}
+
+// ─── Hero ─────────────────────────────────────────────────────────────────────
+
+.hero {
+  color: $color-white;
+  text-align: center;
+
+  @media (min-width: $bp-desktop) {
+    text-align: left;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: $bp-desktop) {
+      font-size: 3.125rem;
+    }
+  }
+
+  &__description {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75;
+    opacity: 0.75;
+  }
+}
+
+// ─── Signup ───────────────────────────────────────────────────────────────────
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__offer {
+    background-color: $color-purple;
+    color: $color-white;
+    text-align: center;
+    padding: 1.125rem 3rem;
+    border-radius: 0.625rem;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    box-shadow: 0 8px 0 hsl(248, 32%, 35%);
+  }
+
+  &__card {
+    background-color: $color-white;
+    border-radius: 0.625rem;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 8px 0 hsl(0, 0%, 0%, 0.15);
+
+    @media (min-width: $bp-desktop) {
+      padding: 2.5rem;
+    }
+  }
+}
+
+// ─── Form ─────────────────────────────────────────────────────────────────────
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__group {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.9375rem 1rem;
+    border: 1px solid $color-gray-mid;
+    border-radius: 0.3125rem;
+    font-family: $font-family;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $color-gray-dark;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: $color-gray-dark;
+      opacity: 0.75;
+      font-weight: 600;
+    }
+
+    &:focus {
+      border-color: $color-gray-dark;
+    }
+
+    .form__group--error & {
+      border-color: $color-red;
+      padding-right: 3rem;
+    }
+  }
+
+  &__icon-error {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 0.875rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    pointer-events: none;
+
+    .form__group--error & {
+      display: block;
+    }
+  }
+
+  &__error {
+    display: none;
+    color: $color-red;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    font-style: italic;
+    text-align: right;
+    margin-top: 0.375rem;
+
+    .form__group--error & {
+      display: block;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    padding: 1.0625rem;
+    margin-top: 0.25rem;
+    background-color: $color-green;
+    color: $color-white;
+    border: none;
+    border-radius: 0.3125rem;
+    font-family: $font-family;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 0 $color-green-dark;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $color-green-light;
+    }
+  }
+
+  &__terms {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: $color-gray-mid;
+    text-align: center;
+    line-height: 1.75;
+  }
+
+  &__terms-link {
+    color: $color-red;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// ─── Attribution ──────────────────────────────────────────────────────────────
+
+.attribution {
+  margin-top: 2rem;
+  font-size: 0.6875rem;
+  text-align: center;
+  color: $color-white;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}

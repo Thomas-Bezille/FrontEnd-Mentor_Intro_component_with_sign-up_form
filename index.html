@@ -1,40 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Intro component with sign up form</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <h1 class="hero__title">Learn to code by watching others</h1>
+        <p class="hero__description">
+          See how experienced developers solve problems in real-time. Watching scripted tutorials is
+          great, but understanding how developers think is invaluable.
+        </p>
+      </section>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Intro component with sign up form</title>
+      <aside class="signup">
+        <div class="signup__offer">
+          <p>
+            <strong>Try it free 7 days</strong> then $20/mo. thereafter
+          </p>
+        </div>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <div class="signup__card">
+          <form class="form" id="signup-form" novalidate>
+            <div class="form__group">
+              <input
+                class="form__input"
+                type="text"
+                id="first-name"
+                name="firstName"
+                placeholder="First Name"
+                aria-label="First Name"
+                aria-describedby="first-name-error"
+              />
+              <span class="form__error" id="first-name-error" aria-live="polite"></span>
+              <img class="form__icon-error" src="/images/icon-error.svg" alt="" aria-hidden="true" />
+            </div>
 
-  Learn to code by watching others
+            <div class="form__group">
+              <input
+                class="form__input"
+                type="text"
+                id="last-name"
+                name="lastName"
+                placeholder="Last Name"
+                aria-label="Last Name"
+                aria-describedby="last-name-error"
+              />
+              <span class="form__error" id="last-name-error" aria-live="polite"></span>
+              <img class="form__icon-error" src="/images/icon-error.svg" alt="" aria-hidden="true" />
+            </div>
 
-  See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
-  but understanding how developers think is invaluable. 
+            <div class="form__group">
+              <input
+                class="form__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Address"
+                aria-label="Email Address"
+                aria-describedby="email-error"
+              />
+              <span class="form__error" id="email-error" aria-live="polite"></span>
+              <img class="form__icon-error" src="/images/icon-error.svg" alt="" aria-hidden="true" />
+            </div>
 
-  Try it free 7 days then $20/mo. thereafter
+            <div class="form__group">
+              <input
+                class="form__input"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                aria-label="Password"
+                aria-describedby="password-error"
+              />
+              <span class="form__error" id="password-error" aria-live="polite"></span>
+              <img class="form__icon-error" src="/images/icon-error.svg" alt="" aria-hidden="true" />
+            </div>
 
-  First Name 
-  Last Name 
-  Email Address
-  Password
+            <button class="form__submit" type="submit">Claim your free trial</button>
 
-  Claim your free trial 
+            <p class="form__terms">
+              By clicking the button, you are agreeing to our
+              <a class="form__terms-link" href="#">Terms and Services</a>
+            </p>
+          </form>
+        </div>
+      </aside>
+    </main>
 
-  By clicking the button, you are agreeing to our Terms and Services
-  
-      <footer class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Thomas</a>.
     </footer>
-</body>
+  </body>
 </html>
